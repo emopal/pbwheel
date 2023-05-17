@@ -1,0 +1,101 @@
+{% extends "config.html" %}
+{% block main %}
+<main class="main-wrapper">
+    <!-- Landing view -->
+    <section id="_landing" class="state-visible state">
+        <img class="logo" src="https://wordslikethecold.files.wordpress.com/2023/04/7b83f-poetry-bores-logo.png?w=1024"
+            alt="Poetry Bores">
+        <h1>The Poetry Bores Game</h1>
+        <button class="state-button" data-target="_game">
+            <i class="fa-solid fa-play"></i>
+            Start
+        </button>
+        <div class="icon-list">
+            <p class="state-button" data-target="_howto">
+                <i class="fa-solid fa-circle-question"></i>
+            </p>
+            <p class="state-button" data-target="_info">
+                <i class="fa-solid fa-circle-info"></i>
+            </p>
+            <p class="state-button" data-target="_submissions">
+                <i class="fa-solid fa-trophy"></i>
+            </p>
+        </div>
+    </section>
+    <!-- How-to View -->
+    <section id="_howto" class="state-hidden state">
+        <h1>How To Play</h1>
+        <p>The Poetry Bores Game is a game that challenges you to write a poem in under sixty seconds according to a
+            prompt that is randomly dealt to you by a spinning wheel. To play, simply click spin in the center of the
+            wheel, and click start when you're ready to write. If you want you can even submit your finished masterpeice
+            for others to see. We can't wait so see what you came up with</p>
+        <p>Take a moment to go and check out and vote on other submissions too.</p>
+        <p>Keep Writing!</p>
+        <br><br>
+        <button class="state-button" data-target="_landing">Back</button>
+    </section>
+    <!--Info view-->
+    <section id="_info" class="state-hidden state">
+        <h1>About</h1>
+        <p>Made with love as a collaboration between <a href="https://www.tolalive.com">Tola Makanjuola</a>, for whom
+            music was the catalyst for his journey as a poet; and <a href="http://2937.netlify.app">Emmanuel Alabi</a>,
+            your resident coder and formidable gamer.</p>
+        <br><br>
+        <button class="state-button" data-target="_landing">Back</button>
+    </section>
+    <!-- Submissions view-->
+    <section id="_submissions" class="state-hidden state">
+        <h1>Submissions</h1>
+        <div id="submissions">
+            {% if submissions|length == 0%}
+            <p>It looks like there haven't been any submissions yet. Be the first!</p>
+            {% else %}
+            {% for i in range(submissions|length) %}
+            <div class="submission-container">
+                <p class="submission-poem"> {{ Submissions[i]['poem']}} </p>
+                <p class="submission-author"> {{ submissions[i]['author'] }} </p>
+                <div class="submission-votes">
+                    <i class="fa fa-arrow-down vote" data-id="{{ submissions[i]['id'] }}" data-type="down"></i>
+                    <span>{{ submissions[i]['votes'] }}</span>
+                    <i class="fa fa-arrow-up vote" data-id="{{ submissions[i]['id'] }}" data-type="up"></i>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <button class="state-button" data-target="_landing">Back</button>
+        </div>
+    </section>
+    <section id="_game" class="state-hidden state">
+        <h2>Write a Poem in Sixty Seconds</h2>
+        <br>
+        <button id="spin">Spin!</button>
+        <br>
+        <div class="container">
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+            <div class="six">6</div>
+            <div class="seven">7</div>
+            <div class="eight">8</div>
+        </div>
+        <br>
+        <span style="display: flex; align-items: center;">
+            <button onclick="start()" id="startStop">Start</button>
+            <h1 id="display" style="margin-bottom: 0px; width: 50px; text-align: center;">00</h1>
+            <button onclick="reSet()">Reset</button>
+        </span>
+        <br>
+        <textarea name="" id="textarea" placeholder="Start writing here"></textarea>
+        <button class="state-button" data-target="_submit">Submit this poem!</button>
+    </section>
+    <section id="_submit" class="state-hidden state">
+        <h1>Submit your Poem</h1>
+        <form action="/submit" id="submit">
+            <textarea name="poem" id="poem" readonly></textarea>
+            <input type="text" name="author" placeholder="Author Name">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    {% endblock %}

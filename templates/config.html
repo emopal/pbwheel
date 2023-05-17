@@ -1,0 +1,32 @@
+<!-- all html content that isn't actually displayed on the page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poetry Bores Spinning Wheel</title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/static/css/animation.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/0e515ca39f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- main content -->
+    {% block main %}{% endblock %}
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- local javascript -->
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/views.js"></script>
+    <script src="/static/js/submit.js"></script>
+    <script src="/static/js/animation.js"></script>
+</body>
+</html>

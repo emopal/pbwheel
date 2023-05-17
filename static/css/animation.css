@@ -1,0 +1,106 @@
+/* Credit to Wakasato for this also. */
+
+/* Main Visual ãµã‚ã£ã¨æµ®ãä¸ŠãŒã‚‹ã‚¢ãƒ‹ãƒ¡ */
+/* ---------------------------- */
+.catch {
+    display: none;
+}
+
+/* ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã™ã‚‹ã¨ä¸­å¤®ã¸å¯„ã‚‹å‹•ãã‚’ã™ã‚‹ã‚¢ãƒ‹ãƒ¡ */
+/* ---------------------------- */
+
+.mv_fade_in {
+    display: block;
+    padding: 20px;
+    background-color: cadetblue;
+}
+
+.fade_in {
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+}
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¹ã‚¿ã‚¤ãƒ« å³ã‹ã‚‰ä¸­å¤®ã¸*/
+/* ---------------------------- */
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å‰ */
+.u-fade-type-left {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+/* ãƒˆãƒªã‚¬ãƒ¼ç™ºç«ã§is-activeã‚’ä»˜ä¸Ž */
+.u-fade-type-left.is-active {
+    transition: 1s;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¹ã‚¿ã‚¤ãƒ« å³ã‹ã‚‰ä¸­å¤®ã¸*/
+/* ---------------------------- */
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å‰ */
+.u-fade-type-right {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+/* ãƒˆãƒªã‚¬ãƒ¼ç™ºç«ã§is-activeã‚’ä»˜ä¸Ž */
+.u-fade-type-right.is-active {
+    transition: 1s;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* ãƒ¡ã‚¤ãƒ³ãƒ“ã‚¸ãƒ¥ã‚¢ãƒ«ã€€å‹•ãã‚¢ãƒ‹ãƒ¡ */
+/* ---------------------------- */
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¹ã‚¿ã‚¤ãƒ« ä¸Šã‹ã‚‰ä¸‹ã¸*/
+/* ---------------------------- */
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å‰ */
+.u-fade-type-down {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+/* ãƒˆãƒªã‚¬ãƒ¼ç™ºç«ã§is-activeã‚’ä»˜ä¸Ž */
+.u-fade-type-down.is-active {
+    transition: 1s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¹ã‚¿ã‚¤ãƒ« ä¸‹ã‹ã‚‰ä¸Šã¸*/
+/* ---------------------------- */
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å‰ */
+.u-fade-type-up {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+/* ãƒˆãƒªã‚¬ãƒ¼ç™ºç«ã§is-activeã‚’ä»˜ä¸Ž */
+.u-fade-type-up.is-active {
+    transition: 1s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¹ã‚¿ã‚¤ãƒ« ä½ç½®å›ºå®š*/
+/* ---------------------------- */
+
+/* ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å‰ */
+.u-fade-type-static {
+    opacity: 0;
+}
+
+/* ãƒˆãƒªã‚¬ãƒ¼ç™ºç«ã§is-activeã‚’ä»˜ä¸Ž */
+.u-fade-type-static.is-active {
+    transition: 1s;
+    opacity: 1;
+}
