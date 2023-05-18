@@ -3,7 +3,7 @@ from datetime import datetime, date
 
 # third-party imports
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template
+from flask import Flask, flash, redirect, render_template, request
 
 # local imports
 from aux import dbinit
@@ -41,15 +41,15 @@ def submit():
 # votes
 @app.route("/vote/<id>/<type_>", methods=["POST"])
 def votes(id, type_):
-    submission_current_votes = db.execute('SELECT votes FROM submissions WHERE id = :id', id=id)[0]
+    current_submission = db.execute('SELECT * FROM submissions WHERE id = :id', id=id)
     if type_ == 'up':
         db.execute('UPDATE submissions SET votes = :votes WHERE id = :id',
-        votes = submission_current_votes + 1,
+        votes = current_submission[0]['votes'] + 1,
         id = id
         )
     else:
         db.execute('UPDATE submissions SET votes = :votes WHERE id = :id',
-        votes = submission_current_votes + 1,
+        votes = current_submission[0]['votes'] - 1,
         id = id
         )
     

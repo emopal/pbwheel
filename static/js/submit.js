@@ -1,15 +1,15 @@
 // script for submission submission
 $(document).on('submit', '#submit', function(e){
-    e.preventDefault;
+    e.preventDefault();
     $.ajax({
         type: 'POST',
         url: '/submit',
         data: {
-            poem: $('#submit > input#home').val(),
-            author: $('submit > input#author').val()
+            poem: $("textarea[name='poem']").val(),
+            author: $("input[name='author']").val()
         },
-        success: function(){
-            $('#submissions').reload(window.href + '#submissions');
+        success: function () {
         }
     })
+    $('#submissions-div').load(location.href + ' #submissions-div');
 })

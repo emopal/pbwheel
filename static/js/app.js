@@ -7,6 +7,7 @@ btn.onclick = function () {
     container.style.transform = "rotate(" + number + "deg)";
     number += Math.ceil(Math.random() * 5000 + 100);
 }
+
 // timer
 let interval = "null";
 i = 60;
@@ -17,20 +18,19 @@ function onTimer() {
 
     if (i < 0) {
         p.readOnly = true;
-        document.getElementById("startStop").innerHTML = "START";
+        document.getElementById("startStop").innerHTML = "Start";
         window.clearInterval(interval);
         i = 60;
-        var $poem = $('#textarea').val($('#poem').val());
-        var $submission ;
-        $poem.val($submission);
+
+        $('#poem').val($('#textarea').val());
     }
 }
 function start() {
     if (interval == "null") {
-        document.getElementById("startStop").innerHTML = "PAUSE";
+        document.getElementById("startStop").innerHTML = "Pause";
         interval = window.setInterval(onTimer, 1000);
     } else {
-        document.getElementById("startStop").innerHTML = "START";
+        document.getElementById("startStop").innerHTML = "Start";
         window.clearInterval(interval);
         interval = "null";
     }

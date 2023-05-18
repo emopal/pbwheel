@@ -46,14 +46,14 @@
     <!-- Submissions view-->
     <section id="_submissions" class="state-hidden state">
         <h1>Submissions</h1>
-        <div id="submissions">
+        <div id="submissions-div">
             {% if submissions|length == 0%}
             <p>It looks like there haven't been any submissions yet. Be the first!</p>
             {% else %}
             {% for i in range(submissions|length) %}
             <div class="submission-container">
-                <p class="submission-poem"> {{ Submissions[i]['poem']}} </p>
-                <p class="submission-author"> {{ submissions[i]['author'] }} </p>
+                <p class="submission-poem"> {{ submissions[i]['poem']}} </p>
+                <p class="submission-author">Written by {{ submissions[i]['author'] }} </p>
                 <div class="submission-votes">
                     <i class="fa fa-arrow-down vote" data-id="{{ submissions[i]['id'] }}" data-type="down"></i>
                     <span>{{ submissions[i]['votes'] }}</span>
@@ -65,6 +65,7 @@
             <button class="state-button" data-target="_landing">Back</button>
         </div>
     </section>
+    <!-- Main game interface -->
     <section id="_game" class="state-hidden state">
         <h2>Write a Poem in Sixty Seconds</h2>
         <br>
@@ -92,10 +93,10 @@
     </section>
     <section id="_submit" class="state-hidden state">
         <h1>Submit your Poem</h1>
-        <form action="/submit" id="submit">
-            <textarea name="poem" id="poem" readonly></textarea>
-            <input type="text" name="author" placeholder="Author Name">
-            <button type="submit">Submit</button>
+        <form action="/submit" method="POST" id="submit">
+            <textarea id="poem" name="poem" id="poem" readonly></textarea>
+            <input id="author" type="text" name="author" placeholder="Author Name">
+            <button type="submit" class="state-button" data-target="_submissions">Submit</button>
         </form>
     </section>
     {% endblock %}
