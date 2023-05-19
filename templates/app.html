@@ -46,6 +46,7 @@
     <!-- Submissions view-->
     <section id="_submissions" class="state-hidden state">
         <h1>Submissions</h1>
+        <p>Here are a list of submissions from fellow Poetry Bored people!</p>
         <div id="submissions-div">
             {% if submissions|length == 0%}
             <p>It looks like there haven't been any submissions yet. Be the first!</p>
@@ -71,6 +72,7 @@
         <br>
         <button id="spin">Spin!</button>
         <br>
+        <!--This the spinning wheel-->
         <div class="container">
             <div class="one">1</div>
             <div class="two">2</div>
@@ -89,7 +91,7 @@
         </span>
         <br>
         <textarea name="" id="textarea" placeholder="Start writing here"></textarea>
-        <button class="state-button" data-target="_submit">Submit this poem!</button>
+        <button style="display: none;" class="state-button submit-btn" data-target="_submit">Submit this poem!</button>
     </section>
     <section id="_submit" class="state-hidden state">
         <h1>Submit your Poem</h1>

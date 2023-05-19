@@ -18,7 +18,7 @@ db = SQL("sqlite:///main.db")
 # root path
 @app.route("/")
 def index():
-    submissions = db.execute('SELECT * FROM submissions')
+    submissions = db.execute('SELECT * FROM submissions ORDER BY votes DESC')
     return render_template('app.html', submissions = submissions)
 
 # submissions

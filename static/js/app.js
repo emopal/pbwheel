@@ -23,6 +23,7 @@ function onTimer() {
         i = 60;
 
         $('#poem').val($('#textarea').val());
+        $('.submit-btn').css('display', 'block');
     }
 }
 function start() {
