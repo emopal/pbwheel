@@ -67,8 +67,10 @@
         </div>
     </section>
     <!-- Main game interface -->
-    <section id="_game" class="state-hidden state">
+    <section id="_game" class="state-hidden state" onload="randomizeWords();">
         <h2>Write a Poem in 60 Seconds</h2>
+        <br>
+        <button id="randomize-btn" onclick="randomizeWords();">Randomize</button>
         <br>
         <!--This the spinning wheel-->
         <div class="container">
