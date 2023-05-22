@@ -70,9 +70,8 @@
     <section id="_game" class="state-hidden state" onload="randomizeWords();">
         <h2>Write a Poem in 60 Seconds</h2>
         <br>
-        <button id="randomize-btn" onclick="randomizeWords();">Randomize</button>
-        <br>
         <!--This the spinning wheel-->
+        <i class="fa fa-arrow-right"></i>
         <div class="container">
             <button id="spin">Spin!</button>
             <div class="one">1</div>
@@ -85,13 +84,15 @@
             <div class="eight">8</div>
         </div>
         <br>
+        <button id="randomize-btn" onclick="randomizeWords();"><i class="fa-solid fa-shuffle"></i>Randomise</button>
+        <br>
         <span style="display: flex; align-items: center;">
             <button onclick="start()" id="startStop">Start</button>
             <h1 id="display" style="margin-bottom: 0px; width: 50px; text-align: center;">00</h1>
             <button onclick="reSet()">Reset</button>
         </span>
         <br>
-        <textarea name="" id="textarea" placeholder="Start writing here"></textarea>
+        <textarea name="" id="textarea" placeholder="Start writing here..."></textarea>
         <button style="display: none;" class="state-button submit-btn" data-target="_submit">Submit this poem!</button>
     </section>
     <section id="_submit" class="state-hidden state">
