@@ -105,6 +105,15 @@ p {
     color: black;
     margin-bottom: 20px;
 }
+.outer-container{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
 .container {
     width: 375px;
@@ -189,8 +198,8 @@ p {
 .fa-arrow-right{
     position: absolute;
     font-size: 35px;
-    left: 28%;
-    top: 30%;
+    left: 0;
+    top: 50%;
     z-index: 999;
 }
 .fa-shuffle{
