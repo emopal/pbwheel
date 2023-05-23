@@ -112,7 +112,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .container {
@@ -137,11 +137,14 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
-    font-weight: bold;
-    color: #fff;
     left: 29%;
     writing-mode: vertical-lr;
+}
+
+.container div p{
+    color: white;
+    font-size: 15px;
+    transform: rotate(180deg);
 }
 
 #spin{
@@ -195,12 +198,28 @@ p {
     transform: rotate(315deg);
 }
 
-.fa-arrow-right{
+.fa-location-dot{
     position: absolute;
-    font-size: 35px;
-    left: 0;
-    top: 50%;
+    font-size: 40px;
+    right: 0;
+    top: 45%;
     z-index: 999;
+    transform: rotate(90deg);
+}
+.dot-animate{
+    animation: point 1s infinite;
+}
+
+@keyframes point{
+    0%{
+        right: -10px;
+    }
+    50%{
+        right: 10px;
+    }
+    100%{
+        right: -10px;
+    }
 }
 .fa-shuffle{
     margin-right: 5px;
@@ -230,7 +249,7 @@ p {
 @media only screen 
    and (min-width : 1200px) {
    #textarea{
-    width: 40%;
+    width: 400px;
    }
 }
 #poem{

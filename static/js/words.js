@@ -10,14 +10,14 @@ function randomizeWords() {
         var wordSeven = data[Math.floor(Math.random() * data.length)];
         var wordEight = data[Math.floor(Math.random() * data.length)];
 
-        $('.container .one').text(wordOne);
-        $('.container .two').text(wordTwo);
-        $('.container .three').text(wordThree);
-        $('.container .four').text(wordFour);
-        $('.container .five').text(wordFive);
-        $('.container .six').text(wordSix);
-        $('.container .seven').text(wordSeven);
-        $('.container .eight').text(wordEight);
+        $('.container .one').html("<p>" + wordOne + "</p>");
+        $('.container .two').html("<p>" + wordTwo + "</p>");
+        $('.container .three').html("<p>" + wordThree + "</p>");
+        $('.container .four').html("<p>" + wordFour + "</p>");
+        $('.container .five').html("<p>" + wordFive + "</p>");
+        $('.container .six').html("<p>" + wordSix + "</p>");
+        $('.container .seven').html("<p>" + wordSeven + "</p>");
+        $('.container .eight').html("<p>" + wordEight + "</p>");
     });
 };
 

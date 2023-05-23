@@ -6,6 +6,7 @@ let number = Math.ceil(Math.random() * 5000 + 100);
 btn.onclick = function () {
     container.style.transform = "rotate(" + number + "deg)";
     number += Math.ceil(Math.random() * 5000 + 100);
+    $(".fa-location-dot").delay(5000).addClass('dot-animate')
 }
 
 // timer
