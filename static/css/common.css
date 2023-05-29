@@ -275,6 +275,16 @@ p {
     padding: 20px;
     margin-bottom: 20px;
 }
+.submission-poem textarea{
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 18px;
+    width: 100%;
+    overflow-y:visible;
+    height: 14ch;
+    outline: none;
+}
 .submission-author{
     color: grey;
     font-size: 10px;

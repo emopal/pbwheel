@@ -19,6 +19,10 @@ db = SQL("sqlite:///main.db")
 @app.route("/")
 def index():
     submissions = db.execute('SELECT * FROM submissions ORDER BY votes DESC')
+    for i in submissions:
+        if i["votes"] >= 10:
+            db.execute("DELETE FROM submissions WHERE id = :id", id=i['id'])
+    
     return render_template('app.html', submissions = submissions)
 
 # submissions
@@ -26,7 +30,7 @@ def index():
 def submit():
     poem = request.form.get("poem")
     author = request.form.get("author")
-    votes = 1
+    votes = 0
     created = datetime.today()
 
     db.execute("INSERT INTO submissions (poem, author, created, votes) VALUES (:poem, :author, :created, :votes)",

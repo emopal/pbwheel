@@ -46,14 +46,15 @@
     <!-- Submissions view-->
     <section id="_submissions" class="state-hidden state">
         <h1>Submissions</h1>
-        <p>Here are a list of submissions from fellow Poetry Bored people!</p>
         <div id="submissions-div">
             {% if submissions|length == 0%}
             <p>It looks like there haven't been any submissions yet. Be the first!</p>
             {% else %}
             {% for i in range(submissions|length) %}
             <div class="submission-container">
-                <p class="submission-poem"> {{ submissions[i]['poem']}} </p>
+                <p class="submission-poem">
+                    <textarea readonly>{{ submissions[i]['poem']}}</textarea> 
+                </p>
                 <p class="submission-author">Written by {{ submissions[i]['author'] }} </p>
                 <div class="submission-votes">
                     <i class="fa fa-arrow-down vote" data-id="{{ submissions[i]['id'] }}" data-type="down"></i>

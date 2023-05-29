@@ -6,10 +6,7 @@ $('.vote').on('click', function(e){
     console.log('Clicked to vote. id:' + id + 'type:' + type);
     $.ajax({
         type: 'POST',
-        url: '/vote/' + id + '/' + type,
-        success: function(){}
+        url: '/vote/' + id + '/' + type
     })
-    $('#submissions-div').load(location.href + ' #submissions-div');
-    
-$(this).disabled = true;   
+    $('#submissions-div').load(location.href + ' #submissions-div');  
 });
